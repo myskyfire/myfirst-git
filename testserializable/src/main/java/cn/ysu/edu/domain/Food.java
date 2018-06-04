@@ -7,6 +7,8 @@ import java.io.Serializable;
  */
 public class Food implements Serializable{
 
+    public Food(){}
+
    public  Food(String name,String alias)
     {
         this.name=name;

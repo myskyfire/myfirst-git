@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--配置文件加载器-->
+    <!--<bean id="applicationProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">-->
+        <!--<property name="ignoreResourceNotFound" value="true"/>-->
+        <!--<property name="locations">-->
+            <!--<list>-->
+                <!--&lt;!&ndash;<value>classpath*:*.properties</value>&ndash;&gt;-->
+                <!--<value>classpath:important.properties</value>-->
+                <!--<value>classpath:config.properties</value>-->
+                <!--<value>classpath:jsf.properties</value>-->
+                <!--<value>classpath:notice.properties</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+
+
+   <!-- &lt;!&ndash; 引用配置文件加载器，并使支持${}的形式 &ndash;&gt;
+    <context:property-placeholder properties-ref="applicationProperties" />-->
+
+    <context:annotation-config/>
+
+    <context:component-scan base-package="cn.ysu.edu"/>
+
+    <bean id="food" class="cn.ysu.edu.domain.Food">
+        <property name="name" value="chicken"></property>
+        <property name="alias" value="ck"></property>
+    </bean>
+    <bean id="staticUtils" class="cn.ysu.edu.util.StaticUtils">
+        <property name="food" ref="food"></property>
+    </bean>
+</beans>
