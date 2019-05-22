@@ -11,4 +11,5 @@ package cn.edu.ysu.designPattern;
  */
 
 public class SimpleFactoryPattern {
+
 }

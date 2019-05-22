@@ -1,5 +1,15 @@
 package cn.ysu.edu;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.AsyncContext;
+import javax.servlet.AsyncEvent;
+import javax.servlet.AsyncListener;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -16,7 +26,7 @@ import java.io.PrintWriter;
  */
 
 public class AsyncServletTest {
-
+    private Logger logger = LoggerFactory.getLogger(AsyncServletTest.class);
 
     @RequestMapping("/testAsync")
     @ResponseBody
